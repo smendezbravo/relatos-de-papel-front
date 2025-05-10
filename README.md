@@ -1,17 +1,47 @@
-<<<<<<< HEAD
-# React + Vite
+# 📚 Relatos de Papel – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es el desarrollo del **frontend de la aplicación web** "Relatos de Papel", realizado con **React**, como parte de la asignatura *Desarrollo Web Full Stack*.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/) para configuración y arranque del proyecto
+- [React Router v6](https://reactrouter.com/) para gestión de rutas
+- [JavaScript ES6](https://developer.mozilla.org/es/docs/Web/JavaScript)
+- [CSS3](https://developer.mozilla.org/es/docs/Web/CSS) con metodología **BEM**
 
-## Expanding the ESLint configuration
+## 📂 Estructura del proyecto
+src/
+├── components/ # Componentes reutilizables (Header, Footer, BookCard, etc.)
+├── pages/ # Vistas principales: Landing, Home, Book, Cart, Checkout
+├── hooks/ # Custom Hooks
+├── App.jsx # Configuración de rutas
+├── main.jsx # Punto de entrada de React
+└── styles/ # Archivos CSS 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# relatos-de-papel-front
-Front-end en React para el proyecto Relatos de Papel.
->>>>>>> d907b5a323af6d44b52787fb7a6194a7de831187
+
+## 🖥️ Funcionalidades principales
+
+- ✅ Landing page con redirección automática
+- ✅ Visualización de catálogo de libros
+- ✅ Filtros por título
+- ✅ Vista detallada de cada libro
+- ✅ Carrito de compras (con opción de eliminar)
+- ✅ Checkout con alerta de confirmación y reinicio del carrito
+
+## 🧩 Hooks utilizados
+
+- `useState` y `useEffect` en la mayoría de los componentes
+- `useLocalStorage` (custom hook) para guardar el carrito
+
+## 🔗 Despliegue
+
+La aplicación será desplegada en Vercel:  
+🔗 [https://relatos-de-papel.vercel.app](https://relatos-de-papel.vercel.app)
+
+## 🎥 Videomemoria
+
+Se incluye una videomemoria donde se explica el funcionamiento completo de la aplicación, sus vistas, componentes y tecnologías usadas.
+
+
+

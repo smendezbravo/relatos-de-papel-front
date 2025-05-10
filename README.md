@@ -11,13 +11,16 @@ Este proyecto es el desarrollo del **frontend de la aplicación web** "Relatos d
 - [CSS3](https://developer.mozilla.org/es/docs/Web/CSS) con metodología **BEM**
 
 ## 📂 Estructura del proyecto
+
+```plaintext
 src/
-├── components/ # Componentes reutilizables (Header, Footer, BookCard, etc.)
-├── pages/ # Vistas principales: Landing, Home, Book, Cart, Checkout
-├── hooks/ # Custom Hooks
-├── App.jsx # Configuración de rutas
-├── main.jsx # Punto de entrada de React
-└── styles/ # Archivos CSS 
+├── components/        # Componentes reutilizables (Header, Footer, BookCard, etc.)
+├── pages/             # Vistas principales: Landing, Home, Book, Cart, Checkout
+├── hooks/             # Custom Hooks
+├── App.jsx            # Configuración de rutas
+├── main.jsx           # Punto de entrada de React
+└── styles/            # Archivos CSS
+```
 
 
 ## 🖥️ Funcionalidades principales

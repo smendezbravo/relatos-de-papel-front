@@ -14,13 +14,15 @@ export default function BookInformation(
         <h1>{BookTitle}</h1>
         <ActionButton />
       </div>
-      <div className="image-information">
-        <img src={BookImage} alt={BookTitle} />
-      </div>
-      <div className="book-information__details">
-        <p>Autor: {BookAuthor}</p>
-        <p>Año publicación: {BookYear}</p>
-        <p>Precio: {BookPrice}</p>
+      <div className="general-information">
+        <div className="image-information">
+          <img src={BookImage} alt={BookTitle} />
+        </div>
+        <div className="book-information__details">
+          <p>Autor: {BookAuthor}</p>
+          <p>Año publicación: {BookYear}</p>
+          <p>Precio: {BookPrice}</p>
+        </div>
       </div>
       <div>
         <p>Descripción: {BookDescription}</p>

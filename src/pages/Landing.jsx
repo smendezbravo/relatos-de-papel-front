@@ -1,20 +1,17 @@
-import { useNavigate } from "react-router-dom";
-import '../styles/Landing.css'
-import { useEffect } from "react";
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Landing() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    const timer = setTimeout(() => {
       navigate('/home');
-    }, 5000); //5000 = 5seg
-    return () => clearTimeout(timeout);
+    }, 3000);
+
+    return () => clearTimeout(timer); 
   }, [navigate]);
 
-  const handlAccess = () => {
-    navigate('/home');
-  }
   return (
     <div className="landing">
       <h1>Bienvenido a Relatos de Papel</h1>

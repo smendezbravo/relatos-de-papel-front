@@ -13,9 +13,10 @@ export default function Landing() {
   }, [navigate]);
 
   return (
-    <div>
+    <div className="landing">
       <h1>Bienvenido a Relatos de Papel</h1>
-      <p>Redirigiendo a la página principal en unos segundos...</p>
+      <p>Tu libreria digital de confianza</p>
+      <button onClick={handlAccess}> Acceder </button>
     </div>
   );
 }

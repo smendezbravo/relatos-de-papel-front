@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <Header />
       {/* en un futuro hay que quitar el estilo inline */}
-      <main style={{ paddingTop: '80px', paddingBottom: '60px' }}>
+      <main style={{ paddingTop: '80px', paddingBottom: '80px' }}>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/home" element={<Home />} />

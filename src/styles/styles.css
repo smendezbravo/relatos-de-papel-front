@@ -1,12 +1,10 @@
-#action-button {
-  background-color: #871b31; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
+.action-button {
+  color: rgb(255, 255, 255);
+  padding: 10px 25px;
   text-align: center;
-  text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 10px;
+  margin: 4px;
   cursor: pointer;
+  background-color: rgb(168, 12, 12);
 }

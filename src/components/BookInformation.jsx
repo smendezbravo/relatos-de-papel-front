@@ -1,31 +1,41 @@
 import ActionButton from "../components/ActionButton";
+import "../styles/BookInformation.css";
 
-export default function BookInformation(
+export default function BookInformation({
   BookTitle,
   BookAuthor,
   BookPrice,
   BookDescription,
   BookImage,
-  BookYear
-) {
+  BookYear,
+}) {
   return (
     <div className="book-information">
       <div className="header-information">
-        <h1>{BookTitle}</h1>
-        <ActionButton />
+        <h2>{BookTitle}</h2>
+        <ActionButton text="Añadir al carrito" />
       </div>
       <div className="general-information">
         <div className="image-information">
-          <img src={BookImage} alt={BookTitle} />
+          <ActionButton text="Imagen" />
         </div>
         <div className="book-information__details">
-          <p>Autor: {BookAuthor}</p>
-          <p>Año publicación: {BookYear}</p>
-          <p>Precio: {BookPrice}</p>
+          <p>
+            <strong>Autor:</strong> {BookAuthor}
+          </p>
+          <p>
+            <strong>Año publicación:</strong> {BookYear}
+          </p>
+          <p>
+            <strong>Precio:</strong> {BookPrice}
+          </p>
         </div>
       </div>
       <div>
-        <p>Descripción: {BookDescription}</p>
+        <h3>
+          <strong>Descripción: </strong>
+        </h3>
+        <p>{BookDescription}</p>
       </div>
     </div>
   );

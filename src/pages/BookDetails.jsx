@@ -1,19 +1,24 @@
 import { useParams } from "react-router-dom";
 import BookInformation from "../components/BookInformation";
+import libros from "../data/libros";
 
 export default function BookDetails() {
   const { id } = useParams();
-
+  let LibroFiltrado = libros.find(
+    (libro) => libro.id.toString() === id.toString()
+  );
+  let titulo = LibroFiltrado.titulo;
   return (
     <div>
-      <h1>Detalles del libro</h1>
+      <h2>Detalles del libro</h2>
+
       <BookInformation
-        BookTitle="El nombre del viento"
-        BookAuthor="Patrick Rothfuss"
-        BookPrice="$19.99"
-        BookDescription="El nombre del viento es una novela de fantasía escrita por Patrick Rothfuss. La historia sigue a Kvothe, un joven prodigio que se convierte en un legendario héroe y músico."
-        BookImage=""
-        BookYear="2007"
+        BookTitle={titulo}
+        BookAuthor={LibroFiltrado.autor}
+        BookPrice={LibroFiltrado.precio}
+        BookDescription={LibroFiltrado.descripcion}
+        BookImage={LibroFiltrado.imagen}
+        BookYear={LibroFiltrado.anio}
       />
     </div>
   );

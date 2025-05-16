@@ -1,0 +1,106 @@
+/* Contenedor principal del carrito */
+.cart {
+  padding: 2rem;
+}
+
+/* Cabecera del carrito */
+.cart__header {
+  text-align: center;
+}
+
+.cart__title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Estado vacío del carrito */
+.cart__empty {
+  text-align: center;
+  font-size: 1.2rem;
+  color: gray;
+}
+
+/* Tabla de elementos en el carrito */
+.cart__items {
+  margin-top: 2rem;
+}
+
+.cart__table {
+  width: 100%;
+  border-collapse: separate; 
+  border-spacing: 20px; 
+}
+
+.cart__thead {
+  background-color: #f8f9fa;
+}
+
+.cart__th, .cart__td {
+  padding: 1.5rem; 
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+
+.cart__th--cantidad, .cart__td--cantidad,
+.cart__th--precio, .cart__td--precio,
+.cart__th--subtotal, .cart__td--subtotal,
+.cart__th--acciones, .cart__td--acciones {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+
+.cart__th--precio, .cart__td--precio,
+.cart__th--subtotal, .cart__td--subtotal {
+  text-align: right; 
+}
+
+.cart__row:hover {
+  background-color: #f1f1f1;
+}
+
+/* Total */
+.cart__total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.cart__total-label {
+  font-size: 1.2rem;
+}
+
+.cart__total-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Acciones del carrito */
+.cart__actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.cart__btn {
+  width: 48%;
+}
+
+/* Footer del carrito */
+.cart__footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.cart__remove-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem; 
+  font-weight: bold;
+}
+
+.cart__remove-btn:hover {
+  background-color: #d32f2f; 
+}

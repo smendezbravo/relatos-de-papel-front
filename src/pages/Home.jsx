@@ -4,8 +4,8 @@ import Section from "../components/Section";
 import libros from "../data/libros";
 
 export default function Home() {
-  const masVendidos = libros.slice(0, 3); //se crea una constante masVendidos que contiene los primeros 3 libros del array libros
-  const novedades = libros.slice(3, 5);  //se crea una constante novedades que contiene los libros del 4 al 5 del array libros
+  const masVendidos = libros.slice(0, 25); //se crea una constante masVendidos que contiene los primeros 3 libros del array libros
+  const novedades = libros.slice(25, 50);  //se crea una constante novedades que contiene los libros del 4 al 5 del array libros
 
   return (
     <>

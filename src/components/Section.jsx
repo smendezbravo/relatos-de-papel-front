@@ -8,7 +8,7 @@ const Section = ({ titulo, libros }) => {
         <h2 className="mb-4 fw-bold">{titulo}</h2>
         <div className="row g-4">
           {libros.map((libro) => (
-            <div key={libro.id} className="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+            <div key={libro.id} className="col-12 col-sm-6 col-md-4 col-lg-2 d-flex">
               <BookCard libro={libro} />
             </div>
           ))}

@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import "../styles/BookCard.css"; 
+import "../styles/BookCard.css";
 
 const BookCard = ({ libro }) => {
   return (
@@ -24,9 +25,9 @@ const BookCard = ({ libro }) => {
         <p className="text-success mb-2">Quedan 100+ unidades</p>
         <h5 className="fw-bold">${libro.precio.toFixed(2)}</h5>
         <div className="mt-3 d-flex flex-column gap-2">
-          <button className="btn btn-primary btn-sm bookcard-btn">
+          <Link to={`/bookdetails/${libro.id}`} className="btn btn-primary btn-sm bookcard-btn">
             Ver más
-          </button>
+          </Link>
           <button className="btn btn-outline-success btn-sm bookcard-btn">
             <i className="bi bi-cart"></i> Agregar
           </button>

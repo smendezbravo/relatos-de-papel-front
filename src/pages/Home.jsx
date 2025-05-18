@@ -12,10 +12,13 @@ export default function Home() {
       <Hero />
       <div className="container-fluid px-0 mt-4">
         <FilterBar />
-        <Section titulo="Libros Más Vendidos" libros={masVendidos} />
-        <Section titulo="Novedades" libros={novedades} />
+        <div id="mas-vendidos">
+          <Section titulo="Libros Más Vendidos" libros={masVendidos} />
+        </div>
+        <div id="novedades">
+          <Section titulo="Novedades" libros={novedades} />
+        </div>
       </div>
     </>
   );
 }
-

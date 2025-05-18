@@ -1,0 +1,115 @@
+.hero-section {
+  position: relative;
+  width: 95vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: 260px; 
+  min-height: unset;
+  background-color: #e9a85a;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  background: rgba(233, 168, 90, 0.6);
+  padding: 0.7rem 1rem;
+  border-radius: 14px;
+  text-align: center;
+  width: 100%;
+  max-width: 840px; 
+  margin: auto;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 260px;
+}
+
+.hero-labels {
+  margin-bottom: 0.4rem;
+}
+
+.venta-online,
+.solo-hoy {
+  font-size: 0.95rem;
+  padding: 3px 12px;
+}
+
+.hero-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 0.3rem;
+}
+
+.hero-discount {
+  font-weight: bold;
+  color: #ffeb3b;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-discount span {
+  font-size: 1.5rem;
+}
+
+.hero-lead {
+  color: #222;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.hero-bold {
+  font-weight: bold;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.hero-catalogo {
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-size: 1rem;
+}
+
+.hero-validity {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    height: 180px;
+  }
+  .hero-content {
+    padding: 0.6rem 0.2rem;
+    max-width: 95vw;
+  }
+  .hero-title {
+    font-size: 1.05rem;
+  }
+  .hero-discount {
+    font-size: 1rem;
+  }
+  .hero-discount span {
+    font-size: 1.2rem;
+  }
+}

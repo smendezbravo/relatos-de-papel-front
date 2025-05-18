@@ -1,21 +1,21 @@
-import BookCard from './BookCard';
+import React from "react";
+import BookCard from "./BookCard";
 
-export default function Section({ title, libros }) {
+const Section = ({ titulo, libros }) => {
   return (
-    <section className="my-5">
-      <h2 className="mb-4">{title}</h2>
-      <div className="row">
-        {libros.map(libro => (
-          <BookCard
-            key={libro.id}
-            id={libro.id}
-            title={libro.titulo}
-            author={libro.autor}
-            image={libro.imagen}
-            price={libro.precio}
-          />
-        ))}
+    <section className="py-5 w-100" style={{ backgroundColor: "#fff" }}>
+      <div className="container-fluid">
+        <h2 className="mb-4 fw-bold">{titulo}</h2>
+        <div className="row g-4">
+          {libros.map((libro) => (
+            <div key={libro.id} className="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+              <BookCard libro={libro} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
-}
+};
+
+export default Section;

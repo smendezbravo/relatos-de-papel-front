@@ -9,6 +9,7 @@ const libros = [
     anio: 1967,
     imagen:
       "https://images.cdn3.buscalibre.com/fit-in/360x360/61/8d/618d227e8967274cd9589a549adff52d.jpg",
+    calificacion: 4.5,
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ const libros = [
     anio: 1949,
     imagen:
       "https://images.cdn1.buscalibre.com/fit-in/360x360/d5/34/d534539adeb0069a677d6945dd27c461.jpg",
+    calificacion: 4.0,
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ const libros = [
     anio: 1813,
     imagen:
       "https://images.cdn2.buscalibre.com/fit-in/360x360/dd/24/dd24299280a501fbc7be722f9f24e29d.jpg",
+    calificacion: 4.8,
   },
   {
     id: 4,
@@ -42,6 +45,7 @@ const libros = [
     anio: 2007,
     imagen:
       "https://images.cdn3.buscalibre.com/fit-in/360x360/fa/3c/fa3cd0450f8f59f3e4dcf35b4e0f8b71.jpg",
+    calificacion: 3.9,
   },
   {
     id: 5,
@@ -53,6 +57,7 @@ const libros = [
     anio: 2011,
     imagen:
       "https://images.cdn1.buscalibre.com/fit-in/360x360/11/0f/110f74861ad81def4177f76eb906bf32.jpg",
+    calificacion: 2.0,
   },
 ];
 

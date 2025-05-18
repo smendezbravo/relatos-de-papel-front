@@ -4,16 +4,19 @@ import libros from "../data/libros";
 
 export default function BookDetails() {
   const { id } = useParams();
-  let LibroFiltrado = libros.find(
+  const LibroFiltrado = libros.find(
     (libro) => libro.id.toString() === id.toString()
   );
-  let titulo = LibroFiltrado.titulo;
+
+  if (!LibroFiltrado) {
+    return <div><h2>Libro no encontrado</h2></div>;
+  }
+
   return (
     <div>
       <h2>Detalles del libro</h2>
-
       <BookInformation
-        BookTitle={titulo}
+        BookTitle={LibroFiltrado.titulo}
         BookAuthor={LibroFiltrado.autor}
         BookPrice={LibroFiltrado.precio}
         BookDescription={LibroFiltrado.descripcion}

@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import { CartContext } from '../context/SimpleCartContext';
 import "../styles/BookCard.css";
 
 const BookCard = ({ libro }) => {
+  const { addToCart } = useContext(CartContext);
+
   return (
     <div className="card h-100 shadow-sm border-0 bookcard-container">
       <img
@@ -28,7 +30,10 @@ const BookCard = ({ libro }) => {
           <Link to={`/bookdetails/${libro.id}`} className="btn btn-primary btn-sm bookcard-btn">
             Ver más
           </Link>
-          <button className="btn btn-outline-success btn-sm bookcard-btn">
+          <button 
+            className="btn btn-outline-success btn-sm bookcard-btn"
+            onClick={() => addToCart(libro)}
+          >
             <i className="bi bi-cart"></i> Agregar
           </button>
         </div>

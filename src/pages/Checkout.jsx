@@ -10,7 +10,7 @@ export default function Checkout() {
   const { cart, clearCart } = useContext(CartContext);
   const [showModal, setShowModal] = useState(false);
 
-  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const total = cart.reduce((sum, item) => sum + item.precio * item.quantity, 0);
 
   const handlePayment = () => {
     setShowModal(true); // Mostrar el modal al hacer clic en "Pagar"
@@ -48,10 +48,10 @@ export default function Checkout() {
             <tbody>
               {cart.map((item, index) => (
                 <tr key={index}>
-                  <td>{item.title}</td>
+                  <td>{item.titulo}</td>
                   <td>{item.quantity}</td>
-                  <td>${item.price.toFixed(2)}</td>
-                  <td>${(item.price * item.quantity).toFixed(2)}</td>
+                  <td>${item.precio.toFixed(2)}</td>
+                  <td>${(item.precio * item.quantity).toFixed(2)}</td>
                 </tr>
               ))}
             </tbody>

@@ -10,7 +10,7 @@ const BookCard = ({ libro }) => {
     <div className="card h-100 shadow-sm border-0 bookcard-container">
       <img
         src={libro.imagen}
-        className="card-img-top bookcard-img"
+        className="card-img-top bookcard-img img-fluid"
         alt={libro.titulo}
       />
       <div className="card-body d-flex flex-column">
@@ -20,8 +20,7 @@ const BookCard = ({ libro }) => {
         <p className="card-text text-muted bookcard-author">
           {libro.autor}
         </p>
-        {/* Bloque que alterna info y botones */}
-        <div className="bookcard-info-actions">
+        <div className="bookcard-info-actions mt-auto">
           <div className="bookcard-info">
             <div className="mb-2">
               <span className="text-warning">★ ★ ★ ★ ☆</span>
@@ -44,11 +43,13 @@ const BookCard = ({ libro }) => {
             </Link>
           </div>
         </div>
-        <h5 className="fw-bold">${libro.precio.toFixed(2)}</h5>
+        <h5 className="fw-bold mt-3">${libro.precio.toFixed(2)}</h5>
       </div>
     </div>
   );
 };
 
 export default BookCard;
+
+
 

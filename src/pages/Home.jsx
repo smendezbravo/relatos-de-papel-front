@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import FilterBar from "../components/FilterBar";
 import Section from "../components/Section";
 import libros from "../data/libros";
+import { Container } from "react-bootstrap"; 
 
 export default function Home() {
   const [search, setSearch] = useState("");
@@ -35,7 +36,6 @@ export default function Home() {
     return filtered;
   }
 
-  // Función para limpiar filtros
   function handleClearFilters() {
     setSearch("");
     setGenre("");
@@ -48,7 +48,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className="container-fluid px-0 mt-4">
+      
+      <Container fluid className="px-0 px-sm-3 mt-4">  {/* padding para pantallas pequeñas */}
         <FilterBar
           search={search}
           genre={genre}
@@ -59,13 +60,25 @@ export default function Home() {
           genresList={genresList}
           onClearFilters={handleClearFilters}
         />
-        <div id="mas-vendidos">
-          <Section titulo="Libros Más Vendidos" libros={masVendidos} />
+        
+        {/* Sección Más Vendidos */}
+        <div id="mas-vendidos" className="mt-4">
+          <Section 
+            titulo="Libros Más Vendidos" 
+            libros={masVendidos}
+            gridConfig={{ xs: 12, sm: 6, md: 4, lg: 3 }}  // Config responsiva
+          />
         </div>
-        <div id="novedades">
-          <Section titulo="Novedades" libros={novedades} />
+
+        {/* Sección Novedades */}
+        <div id="novedades" className="mt-5 mb-4">
+          <Section 
+            titulo="Novedades" 
+            libros={novedades}
+            gridConfig={{ xs: 12, sm: 6, md: 4, lg: 3 }}  // Config responsiva
+          />
         </div>
-      </div>
+      </Container>
     </>
   );
 }

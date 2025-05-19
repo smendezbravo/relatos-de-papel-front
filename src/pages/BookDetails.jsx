@@ -1,12 +1,10 @@
 import { useParams } from "react-router-dom";
-import BookInformation from "../components/BookInformation";
 import libros from "../data/libros";
+import BookInformation from "../components/BookInformation";
 import { useNavigate } from "react-router-dom";
 
 export default function BookDetails() {
   const { id } = useParams();
-
-  const navigate = useNavigate();
   const LibroFiltrado = libros.find(
     (libro) => libro.id.toString() === id.toString()
   );
@@ -18,10 +16,9 @@ export default function BookDetails() {
       </div>
     );
   }
+
   return (
     <div>
-      <button onClick={() => navigate("/home")}>Seguir comprando</button>
-
       <h2>Detalles del libro</h2>
       <BookInformation
         BookId={LibroFiltrado.id}

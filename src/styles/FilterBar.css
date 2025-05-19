@@ -1,0 +1,16 @@
+.filterbar-clear-btn {
+  font-size: 1.5rem;
+  padding: 0.25rem 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filterbar-clear-btn i {
+  vertical-align: middle;
+}
+
+.filterbar-clear-btn:hover {
+  background-color: #c82333; /* un rojo más oscuro al pasar el mouse */
+  border-color: #bd2130;
+}

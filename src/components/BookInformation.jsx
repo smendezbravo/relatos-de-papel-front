@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/SimpleCartContext";
 import "../styles/BookInformation.css";
+import { useNavigate } from "react-router-dom";
 
 export default function BookInformation({ libro }) {
   const { addToCart } = useContext(CartContext);
-
+  const navigate = useNavigate();
   return (
     <div className="row g-4 book-details-main">
+      <a href="/home">Atrás</a>
       {/* Columna izquierda: Portada y ficha técnica */}
       <div className="col-12 col-md-4 col-lg-3 d-flex flex-column align-items-center">
         <img
@@ -18,12 +20,24 @@ export default function BookInformation({ libro }) {
         <div className="card w-100 mt-2">
           <div className="card-body p-3">
             <ul className="list-unstyled mb-0">
-              <li><strong>Autor:</strong> {libro.autor}</li>
-              <li><strong>Año:</strong> {libro.anio}</li>
-              <li><strong>Precio:</strong> ${libro.precio}</li>
-              <li><strong>Calificación:</strong> {libro.calificacion} ⭐</li>
-              <li><strong>Género:</strong> {libro.genero}</li>
-              <li><strong>Categoría:</strong> {libro.categoria}</li>
+              <li>
+                <strong>Autor:</strong> {libro.autor}
+              </li>
+              <li>
+                <strong>Año:</strong> {libro.anio}
+              </li>
+              <li>
+                <strong>Precio:</strong> ${libro.precio}
+              </li>
+              <li>
+                <strong>Calificación:</strong> {libro.calificacion} ⭐
+              </li>
+              <li>
+                <strong>Género:</strong> {libro.genero}
+              </li>
+              <li>
+                <strong>Categoría:</strong> {libro.categoria}
+              </li>
             </ul>
           </div>
         </div>
@@ -50,7 +64,10 @@ export default function BookInformation({ libro }) {
           </button>
         </div>
         <h4 className="mb-3">Reseña</h4>
-        <div className="bg-light p-3 rounded shadow-sm mb-4" style={{ minHeight: "120px" }}>
+        <div
+          className="bg-light p-3 rounded shadow-sm mb-4"
+          style={{ minHeight: "120px" }}
+        >
           {libro.resena || "No hay reseña disponible para este libro."}
         </div>
       </div>

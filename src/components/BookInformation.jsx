@@ -45,6 +45,7 @@ export default function BookInformation({ libro }) {
             className="btn btn-danger btn-lg"
             onClick={() => addToCart(libro)}
           >
+            <i className="bi bi-cart me-2"></i>
             Añadir al carrito
           </button>
         </div>

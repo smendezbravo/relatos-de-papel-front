@@ -13,22 +13,26 @@ export default function BookInformation({
   BookYear,
   BookQualification,
 }) {
+
   const Book = {
+      "id":BookId,
+      "titulo":BookTitle,
+      "autor":BookAuthor,
+      "descripcion":BookDescription,
+      "precio":BookPrice,
+      "anio":BookYear,
+      "imagen":BookImage,
+      "calificacion":BookQualification
+   }
 
   const { addToCart } = useContext(CartContext);
+
 
   return (
     <div className="book-information">
       <div className="header-information">
         <h2>{BookTitle}</h2>
-        <ActionButton
-          text="Añadir al carrito"
-          className="action-button"
-          onClick={() => {
-            addToCart(Book);
-            navigate("/home");
-          }}
-        />
+        <ActionButton text="Añadir al carrito" className="action-button" onClick={() => addToCart(Book)} />
       </div>
 
       <div className="general-information">

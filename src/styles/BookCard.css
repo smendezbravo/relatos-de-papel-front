@@ -5,11 +5,28 @@
   flex-direction: column;
   position: relative;
   transition: box-shadow 0.2s;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 575.98px) {
+  .bookcard-container {
+    max-width: 100%;
+  }
 }
 
 .bookcard-img {
+  width: 100%;
   height: 260px;
   object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  /* Responsive: imagen más baja en móvil */
+}
+@media (max-width: 575.98px) {
+  .bookcard-img {
+    height: 180px;
+  }
 }
 
 .bookcard-title {
@@ -120,4 +137,15 @@
   background-color: #eba75a !important;
   color: #fff !important;
   border-color: #eba75a !important;
+}
+
+/* Opcional: mejora visual en móvil para evitar tarjetas demasiado angostas */
+@media (max-width: 400px) {
+  .bookcard-container {
+    border-radius: 0.5rem;
+  }
+  .bookcard-img {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
 }

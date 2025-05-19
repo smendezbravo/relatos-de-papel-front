@@ -17,7 +17,7 @@ export default function FilterBar({
       <Col md={4}>
         <Form.Control
           type="text"
-          placeholder="Buscar por autor..."
+          placeholder="Buscar por titulo..."
           value={search}
           onChange={e => onSearchChange(e.target.value)}
         />

@@ -19,7 +19,7 @@ export default function Home() {
     let filtered = librosArr;
     if (search) {
       filtered = filtered.filter(l =>
-        l.autor.toLowerCase().includes(search.toLowerCase())
+        l.titulo.toLowerCase().includes(search.toLowerCase())
       );
     }
     if (genre) {

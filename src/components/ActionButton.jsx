@@ -1,6 +1,11 @@
-import "../styles/styles.css";
+import "../styles/ActionButton.css";
 
-export default function ActioButton({ text, onClick }) {
-  return <button className="action-button" onClick={onClick}>{text}</button>;
+export default function ActioButton({ text, onClickFunction }) {
+  return (
+    <>
+      <button className="action__button" onClick={() => onClickFunction()}>
+        <i className="action__button__i"></i> Añadir al carrito
+      </button>
+    </>
+  );
 }
-// This code defines a React functional component named `ActionButton` that takes a `text` prop and returns a button element with the class name "action-button" and the text passed as a prop. The button can be used to trigger actions in a web application, such as submitting a form or navigating to another page.

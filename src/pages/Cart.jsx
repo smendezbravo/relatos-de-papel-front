@@ -3,12 +3,17 @@ import { CartContext } from "../context/SimpleCartContext";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "../styles/cart.css";
+import ActionButton from "../components/ActionButton";
 
 export default function Cart() {
-  const { cart, removeFromCart, updateQuantity, clearCart } = useContext(CartContext);
+  const { cart, removeFromCart, updateQuantity, clearCart } =
+    useContext(CartContext);
   const navigate = useNavigate();
 
-  const total = cart.reduce((sum, item) => sum + (item.precio ? item.precio * item.quantity : 0), 0);
+  const total = cart.reduce(
+    (sum, item) => sum + (item.precio ? item.precio * item.quantity : 0),
+    0
+  );
 
   if (cart.length === 0) {
     return <p>Tu carrito está vacío.</p>;
@@ -39,24 +44,26 @@ export default function Cart() {
                   <input
                     type="number"
                     value={item.quantity}
-                    onChange={(e) => updateQuantity(item.id, parseInt(e.target.value))}
+                    onChange={(e) =>
+                      updateQuantity(item.id, parseInt(e.target.value))
+                    }
                     min="1"
                   />
                 </td>
                 <td className="cart__td cart__td--precio">
-                  ${item.precio ? item.precio.toFixed(2) : 'N/A'}
+                  ${item.precio ? item.precio.toFixed(2) : "N/A"}
                 </td>
                 <td className="cart__td cart__td--subtotal">
-                  ${item.precio ? (item.precio * item.quantity).toFixed(2) : 'N/A'}
+                  $
+                  {item.precio
+                    ? (item.precio * item.quantity).toFixed(2)
+                    : "N/A"}
                 </td>
                 <td className="cart__td cart__td--acciones">
-                  <Button
-                    variant="danger"
-                    className="cart__remove-btn"
-                    onClick={() => removeFromCart(item.id)}
-                  >
-                    Eliminar
-                  </Button>
+                  <ActionButton
+                    text="Eliminar"
+                    onClickFunction={() => removeFromCart(item.id)}
+                  />
                 </td>
               </tr>
             ))}
@@ -69,19 +76,25 @@ export default function Cart() {
         </div>
 
         <div className="cart__actions">
-          <Button variant="secondary" className="cart__btn" onClick={() => navigate('/home')}>
+          <Button
+            variant="secondary"
+            className="cart__btn"
+            onClick={() => navigate("/home")}
+          >
             Seguir comprando
           </Button>
-          <Button variant="primary" className="cart__btn" onClick={() => navigate('/checkout')}>
+          <Button
+            variant="primary"
+            className="cart__btn"
+            onClick={() => navigate("/checkout")}
+          >
             Ir al Checkout
           </Button>
         </div>
       </div>
 
       <div className="cart__footer">
-        <Button variant="outline-danger" onClick={clearCart}>
-          Vaciar carrito
-        </Button>
+        <ActionButton text="Vaciar carrito" onClickFunction={clearCart} />
       </div>
     </div>
   );

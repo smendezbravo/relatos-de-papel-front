@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../context/SimpleCartContext";
 import "../styles/BookInformation.css";
 import { useNavigate } from "react-router-dom";
-import ActioButton from "./ActionButton";
+import ActionButton from "./ActionButton";
 
 export default function BookInformation({ libro }) {
   const { addToCart } = useContext(CartContext);
@@ -56,7 +56,7 @@ export default function BookInformation({ libro }) {
               {libro.genero}
             </span>
           </div>
-          <ActioButton
+          <ActionButton
             text="Añadir al carrito"
             onClickFunction={() => addToCart(libro)}
           />

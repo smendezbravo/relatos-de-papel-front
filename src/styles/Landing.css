@@ -1,28 +1,35 @@
 .landing {
   text-align: center;
-  padding-top: 120px;
+  padding: 4rem 2rem;
 }
 
-.landing h1 {
-  font-size: 2.5rem;
+.landing__title {
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-.landing p {
+.landing__subtitle {
   font-size: 1.2rem;
+  color: #666;
   margin-bottom: 2rem;
 }
 
-.landing button {
-  background-color: #e8a860;
+.landing__button {
+  background-color: #f4a261;
   border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
   font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
+  transition: transform 0.2s;
 }
 
-.landing button:hover {
+.landing__button:hover {
   background-color: #d98a34;
+  transform: scale(1.05);
+}
+
+.landing__modal {
+  text-align: center;
+  font-size: 1rem;
 }

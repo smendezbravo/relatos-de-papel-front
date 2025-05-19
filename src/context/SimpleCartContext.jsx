@@ -22,24 +22,10 @@ export const SimpleCartProvider = ({ children }) => {
     }
   };
 
-  //Si hay más de un elemento restamos la cantidad cuando no borramos con el .filter
+
   const removeFromCart = (id) => {
-  const updatedCart = cart
-    .map(item => {
-      if (item.id === id) {
-        if (item.quantity > 1) {
-          return { ...item, quantity: item.quantity - 1 };
-        } else {
-          return null;
-        }
-      }
-      return item;
-    })
-    .filter(Boolean);
-
-  setCart(updatedCart);
-};
-
+    setCart(cart.filter(item => item.id !== id));
+  };
 
 
   const updateQuantity = (id, quantity) => {

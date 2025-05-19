@@ -20,35 +20,26 @@ const BookCard = ({ libro }) => {
         <p className="card-text text-muted bookcard-author">
           {libro.autor}
         </p>
-        {/* Bloque que alterna info y botones */}
-        <div className="bookcard-info-actions">
-          <div className="bookcard-info">
-            <div className="mb-2">
-              <span className="text-warning">★ ★ ★ ★ ☆</span>
-            </div>
-            <p className="text-muted mb-1">Año: {libro.anio}</p>
-            <p className="text-success mb-2">Quedan 100+ unidades</p>
-          </div>
-          <div className="bookcard-actions">
-            <button
-              className="bookcard-btn bookcard-btn-naranja"
-              onClick={() => addToCart(libro)}
-            >
-              <i className="bi bi-cart me-2"></i> Agregar
-            </button>
-            <Link
-              to={`/bookdetails/${libro.id}`}
-              className="bookcard-btn bookcard-btn-outline-naranja text-decoration-none text-center"
-            >
-              Ver más
-            </Link>
-          </div>
+        <div className="mb-2">
+          <span className="text-warning">★ ★ ★ ★ ☆</span>
         </div>
+        <p className="text-muted mb-1">Año: {libro.anio}</p>
+        <p className="text-success mb-2">Quedan 100+ unidades</p>
         <h5 className="fw-bold">${libro.precio.toFixed(2)}</h5>
+        <div className="mt-3 d-flex flex-column gap-2">
+          <Link to={`/bookdetails/${libro.id}`} className="btn btn-primary btn-sm bookcard-btn">
+            Ver más
+          </Link>
+          <button 
+            className="btn btn-outline-success btn-sm bookcard-btn"
+            onClick={() => addToCart(libro)}
+          >
+            <i className="bi bi-cart"></i> Agregar
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
 export default BookCard;
-

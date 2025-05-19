@@ -5,14 +5,6 @@ const Hero = () => {
   const backgroundImage =
     "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80";
 
-    // Función para scroll suave a la sección
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section
       className="hero-section"
@@ -29,13 +21,14 @@ const Hero = () => {
           </span>
         </p>
         <div className="hero-buttons">
-          <button className="btn btn-dark btn-lg"onClick={() => scrollToSection("mas-vendidos")}>
+          <a href="#mas-vendidos" className="btn btn-dark btn-lg">
             Ver más vendidos
-          </button>
-          <button className="btn btn-outline-dark btn-lg" onClick={() => scrollToSection("novedades")}>
+          </a>
+          <a href="#novedades" className="btn btn-outline-dark btn-lg">
             Descubrir novedades
-          </button>
+          </a>
         </div>
+
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/SimpleCartContext";
+import ActionButton from "../components/ActionButton";
 import "../styles/BookInformation.css";
 
 export default function BookInformation({
@@ -13,15 +14,6 @@ export default function BookInformation({
   BookQualification,
 }) {
   const Book = {
-    id: BookId,
-    titulo: BookTitle,
-    autor: BookAuthor,
-    descripcion: BookDescription,
-    precio: BookPrice,
-    anio: BookYear,
-    imagen: BookImage,
-    calificacion: BookQualification,
-  };
 
   const { addToCart } = useContext(CartContext);
 
@@ -32,47 +24,38 @@ export default function BookInformation({
         <ActionButton
           text="Añadir al carrito"
           className="action-button"
-          onClick={() => addToCart(Book)}
+          onClick={() => {
+            addToCart(Book);
+            navigate("/home");
+          }}
         />
       </div>
 
-      {/* Columna central: Información principal y reseña */}
-      <div className="col-12 col-md-8 col-lg-6">
-        <h2 className="mb-2">{libro.titulo}</h2>
-        <h5 className="text-muted mb-3">{libro.autor}</h5>
-        <div className="mb-3">
-          <span className="badge bg-warning text-dark me-2">
-            {libro.calificacion} ★
-          </span>
-          <span className="badge bg-secondary">{libro.categoria}</span>
-          <span className="badge bg-info text-dark ms-2">{libro.genero}</span>
+      <div className="general-information">
+        <div className="image-information">
+          <img src={BookImage} className="card-img-top" alt={BookTitle} />
         </div>
-        <div className="mb-4">
-          <button
-            className="btn btn-danger btn-lg"
-            onClick={() => addToCart(libro)}
-          >
-            <i className="bi bi-cart me-2"></i>
-            Añadir al carrito
-          </button>
-        </div>
-        <h4 className="mb-3">Reseña</h4>
-        <div
-          className="bg-light p-3 rounded shadow-sm mb-4"
-          style={{ minHeight: "120px" }}
-        >
-          {libro.resena || "No hay reseña disponible para este libro."}
+
+        <div className="book-information__details">
+          <div className="detail-item">
+            <span className="detail-autor">{BookAuthor}</span>
+          </div>
+          <div className="detail-item">
+            <span className="detail-label">Año de publicación:</span>
+            <span>{BookYear}</span>
+          </div>
+          <div className="detail-item">
+            <span className="detail-label">Precio:</span>
+            <span>{BookPrice} €</span>
+          </div>
         </div>
       </div>
 
-      {/* Columna derecha: Descripción */}
-      <div className="col-12 col-lg-3">
-        <div className="card h-100">
-          <div className="card-body">
-            <h5 className="card-title">Descripción</h5>
-            <p className="card-text">{libro.descripcion}</p>
-          </div>
-        </div>
+      <div>
+        <h3>
+          <strong>Descripción:</strong>
+        </h3>
+        <p>{BookDescription}</p>
       </div>
     </div>
   );

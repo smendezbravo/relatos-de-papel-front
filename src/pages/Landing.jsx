@@ -27,19 +27,20 @@ export default function Landing() {
   };
 
   return (
-    <>
-      <div className="landing">
-        <h1>Bienvenido a Relatos de Papel</h1>
-        <p>Tu librería digital de confianza</p>
-        <button onClick={handlAccess}>Acceder</button>
-      </div>
+  <>
+    <div className="landing">
+      <h1 className="landing__title">Bienvenido a Relatos de Papel</h1>
+      <p className="landing__subtitle">Tu librería digital de confianza</p>
+      <button className="landing__button" onClick={handlAccess}>
+        Acceder
+      </button>
+    </div>
 
-      {/* Popup*/}
-      <Modal show={showModal} centered backdrop="static" keyboard={false}>
-        <Modal.Body>
-          Redirigiendo a la página principal...
-        </Modal.Body>
-      </Modal>
-    </>
+    <Modal show={showModal} centered backdrop="static" keyboard={false}>
+      <Modal.Body className="landing__modal">
+        Redirigiendo a la página principal...
+      </Modal.Body>
+    </Modal>
+  </>
   );
 }

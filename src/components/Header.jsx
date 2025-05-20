@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
 import { CartContext } from '../components/SimpleCartContext';
 import '../styles/header.css';
+import useCart from '../hooks/useCart';
+
 
 export default function Header() {
-  const { getTotalQuantity } = useContext(CartContext);
+  const { getTotalQuantity } = useCart();
   const itemCount = getTotalQuantity();
   return (
     <header className="header">

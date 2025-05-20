@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from '../context/SimpleCartContext';
+import { CartContext } from './SimpleCartContext';
 import "../styles/BookCard.css";
 
 const BookCard = ({ libro }) => {

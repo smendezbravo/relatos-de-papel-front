@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from '../context/SimpleCartContext';
 import "../styles/BookCard.css";
+import useCart from '../hooks/useCart';
 
 const BookCard = ({ libro }) => {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart } = useCart();
 
   return (
     <div className="card h-100 shadow-sm border-0 bookcard-container">

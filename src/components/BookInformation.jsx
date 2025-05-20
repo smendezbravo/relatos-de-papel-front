@@ -1,12 +1,11 @@
-import React, { useContext } from "react";
 import { CartContext } from "../context/SimpleCartContext";
 import "../styles/BookInformation.css";
-import { useNavigate } from "react-router-dom";
 import ActionButton from "./ActionButton";
+import useCart from '../hooks/useCart';
+
 
 export default function BookInformation({ libro }) {
-  const { addToCart } = useContext(CartContext);
-  const navigate = useNavigate();
+  const { addToCart } = useCart();
   return (
     <>
       <a href="/home" className="book-information__back-link">

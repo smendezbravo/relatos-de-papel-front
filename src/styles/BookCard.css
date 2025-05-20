@@ -1,46 +1,76 @@
 /* Contenedor principal de la tarjeta
-   - Fija el ancho a 160px en escritorio
-   - Centra la tarjeta y le da fondo y bordes redondeados
-   - Permite transición de sombra al hacer hover */
+   - Fija el ancho (ajusta según tu diseño)
+   - Ocupa toda la altura disponible en el flex padre
+   - Fondo blanco y bordes redondeados */
 .bookcard-container {
-  width: 160px;           /* Ancho fijo en escritorio: ajusta para más/menos tarjetas por fila */
-  min-width: 160px;       /* Evita que se encoja */
-  max-width: 100%;        /* Permite responsividad en móvil */
+  width: 160px;           /* Cambia este valor para más o menos tarjetas por fila */
+  min-width: 160px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 0.5rem;         /* Espacio entre tarjetas */
+  height: 100%;
+  margin: 0.5rem;
   transition: box-shadow 0.2s;
   border-radius: 0.8rem;
   background: #fff;
   position: relative;
 }
 
-/* Imagen superior de la tarjeta
-   - Ocupa todo el ancho
-   - Altura fija para mantener proporción
-   - Recorta la imagen si es necesario */
-.bookcard-img {
+/* Contenedor de la imagen
+   - Altura fija para todas las imágenes
+   - Oculta cualquier parte de la imagen que se salga
+   - Fondo gris claro para imágenes con transparencia o márgenes */
+.bookcard-img-container {
   width: 100%;
-  height: 100px;          /* Altura fija para tarjetas pequeñas */
-  object-fit: cover;      /* Recorta imagen sin deformar */
+  height: 120px;              /* Altura fija para todas las imágenes */
+  overflow: hidden;
+  background: #f5f5f5;
   border-top-left-radius: 0.8rem;
   border-top-right-radius: 0.8rem;
 }
 
-/* Título del libro
-   - Limita la altura a dos líneas
-   - Oculta el texto que sobre
-   - Tamaño de fuente reducido para tarjetas pequeñas */
+/* Imagen de la tarjeta
+   - Ocupa todo el contenedor
+   - Recorta la imagen para que llene el espacio sin deformar
+   - Centra la imagen */
+.bookcard-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Cuerpo de la tarjeta: flex vertical y ocupa toda la altura */
+.card-body.d-flex.flex-column {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Bloque flexible que ocupa todo el espacio arriba del precio */
+.bookcard-main-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Precio siempre alineado al fondo */
+.bookcard-precio {
+  margin-top: auto;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+}
+
+/* Título y autor: máximo dos líneas */
 .bookcard-title {
   font-size: 0.92rem;
   line-height: 1.2em;
   height: 2.4em;
   overflow: hidden;
 }
-
-/* Autor del libro
-   - Igual que el título, dos líneas máximo
-   - Tamaño de fuente reducido */
 .bookcard-author {
   font-size: 0.89rem;
   line-height: 1.2em;
@@ -48,30 +78,15 @@
   overflow: hidden;
 }
 
-/* Cuerpo de la tarjeta
-   - Hace que el contenido crezca verticalmente
-   - Alinea el contenido al inicio */
-.card-body.d-flex.flex-column {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-/* Bloque inferior que alterna info y botones
-   - Siempre ocupa el mismo espacio
-   - Alinea contenido al fondo */
+/* Info y acciones (botones) alternan visibilidad en hover */
 .bookcard-info-actions {
   position: relative;
-  min-height: 70px;       /* Ajusta según el alto de info y botones */
+  min-height: 70px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
   margin-bottom: 0.5rem;
 }
-
-/* Info y acciones (botones) ocupan el mismo espacio absoluto
-   - Se superponen, pero solo uno es visible a la vez */
 .bookcard-info,
 .bookcard-actions {
   position: absolute;
@@ -82,23 +97,16 @@
   justify-content: flex-end;
   transition: opacity 0.2s;
 }
-
-/* Info alineada a la izquierda, visible por defecto */
 .bookcard-info {
   align-items: flex-start;
   opacity: 1;
   pointer-events: auto;
 }
-
-/* Botones centrados, ocultos por defecto */
 .bookcard-actions {
   align-items: center;
   opacity: 0;
   pointer-events: none;
 }
-
-/* Al hacer hover o focus en la tarjeta:
-   - Oculta la info y muestra los botones */
 .bookcard-container:hover .bookcard-info,
 .bookcard-container:focus-within .bookcard-info {
   opacity: 0;
@@ -110,11 +118,7 @@
   pointer-events: auto;
 }
 
-/* Botón naranja para "Agregar al carrito"
-   - Ocupa todo el ancho
-   - Apariencia personalizada
-   - Transición de color en hover/focus
-   - Tamaño de fuente y altura reducidos para tarjetas pequeñas */
+/* Botón naranja para "Agregar al carrito" */
 .bookcard-btn-naranja {
   background-color: #eba75a !important;
   color: #fff !important;
@@ -129,17 +133,13 @@
   transition: background 0.2s, color 0.2s;
   margin-bottom: 0.3rem;
 }
-
 .bookcard-btn-naranja:hover,
 .bookcard-btn-naranja:focus {
   background-color: #d18d40 !important;
   color: #fff !important;
 }
 
-/* Botón "Ver más" con borde naranja
-   - Apariencia personalizada
-   - Transición de color en hover/focus
-   - Tamaño de fuente y altura reducidos */
+/* Botón "Ver más" con borde naranja */
 .bookcard-btn-outline-naranja {
   background-color: #fff !important;
   color: #eba75a !important;
@@ -153,7 +153,6 @@
   justify-content: center;
   transition: background 0.2s, color 0.2s;
 }
-
 .bookcard-btn-outline-naranja:hover,
 .bookcard-btn-outline-naranja:focus {
   background-color: #eba75a !important;
@@ -164,11 +163,6 @@
 /* ===============================
    RESPONSIVE: Ajustes para móvil
    =============================== */
-
-/* En pantallas pequeñas:
-   - La tarjeta ocupa el 100% del ancho, pero no más de 400px
-   - Centrada automáticamente
-   - Imagen más baja */
 @media (max-width: 575.98px) {
   .bookcard-container {
     width: 100%;
@@ -177,8 +171,17 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .bookcard-img {
+  .bookcard-img-container {
     height: 90px;
+  }
+}
+@media (max-width: 400px) {
+  .bookcard-container {
+    border-radius: 0.5rem;
+  }
+  .bookcard-img-container {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
   }
 }
 

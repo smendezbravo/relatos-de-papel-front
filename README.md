@@ -13,14 +13,57 @@ Este proyecto es el desarrollo del **frontend de la aplicación web** "Relatos d
 ## 📂 Estructura del proyecto
 
 ```plaintext
-src/
-├── components/        # Componentes reutilizables (Header, Footer, BookCard, etc.)
-├── pages/             # Vistas principales: Landing, Home, Book, Cart, Checkout
-├── hooks/             # Custom Hooks
-├── App.jsx            # Configuración de rutas
-├── main.jsx           # Punto de entrada de React
-└── styles/            # Archivos CSS
+
+📁 public/
+  └── vite.svg
+ 
+📁 src/
+  ├── 📁 assets/            # Archivos estáticos (SVGs, imágenes)
+  │   └── react.svg
+  │
+  ├── 📁 components/        # Componentes reutilizables (Header, Footer, BookCard, etc.)
+  │   ├── ActionButton.jsx
+  │   ├── BookCard.jsx
+  │   ├── BookInformation.jsx
+  │   ├── FilterBar.jsx
+  │   ├── Footer.jsx
+  │   ├── Header.jsx
+  │   ├── Hero.jsx
+  │   ├── Section.jsx
+  │   └── SimpleCartContext.jsx  # Contexto global (carrito)
+  │
+  ├── 📁 data/              # Datos simulados o fijos
+  │   └── libros.js
+  │
+  ├── 📁 hooks/             # Custom React hooks (useCart)
+  │
+  ├── 📁 pages/             # Vistas o pantallas principales: Landing, Home, Book, Cart, Checkout
+  │   ├── BookDetails.jsx
+  │   ├── Cart.jsx
+  │   ├── Checkout.jsx
+  │   ├── Home.jsx
+  │   └── Landing.jsx
+  │
+  ├── 📁 styles/            # Archivos CSS
+  │   ├── ActionButton.css
+  │   ├── App.css
+  │   ├── BookCard.css
+  │   ├── BookDetails.css
+  │   ├── BookInformation.css
+  │   ├── cart.css
+  │   ├── FilterBar.css
+  │   ├── footer.css
+  │   ├── header.css
+  │   ├── Hero.css
+  │   ├── index.css
+  │   └── Landing.css
+  │
+  ├── App.jsx              # Configuración de rutas
+  └── main.jsx             # Punto de entrada de React
+
 ```
+
+
 
 
 ## 🖥️ Funcionalidades principales

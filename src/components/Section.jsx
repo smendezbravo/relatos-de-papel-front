@@ -5,10 +5,12 @@ export default function Section({ titulo, libros }) {
   return (
     <section className="mb-5">
       <h3 className="mb-4">{titulo}</h3>
-      <div className="d-flex flex-wrap justify-content-start gap-4">
-        {libros.map((libro) => (
-          <BookCard key={libro.id} libro={libro} />
-        ))}
+      <div className="container-fluid px-0">
+        <div className="d-flex flex-wrap justify-content-start gap-4">
+          {libros.map((libro) => (
+            <BookCard key={libro.id} libro={libro} />
+          ))}
+        </div>
       </div>
     </section>
   );

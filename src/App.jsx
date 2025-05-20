@@ -6,7 +6,7 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { SimpleCartProvider } from './context/SimpleCartContext';
+import { SimpleCartProvider } from './components/SimpleCartContext';
 
 function App() {
   return (

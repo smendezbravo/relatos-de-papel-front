@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CartContext } from '../context/SimpleCartContext';
+import { CartContext } from '../components/SimpleCartContext';
 import "../styles/BookCard.css";
 import useCart from '../hooks/useCart';
 

@@ -1,4 +1,4 @@
-import { CartContext } from "../context/SimpleCartContext";
+import { CartContext } from "../components/SimpleCartContext";
 import "../styles/BookInformation.css";
 import ActionButton from "./ActionButton";
 import useCart from '../hooks/useCart';

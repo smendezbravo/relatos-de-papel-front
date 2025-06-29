@@ -12,8 +12,33 @@ export default function Checkout() {
 
   const total = cart.reduce((sum, item) => sum + item.precio * item.quantity, 0);
 
-  const handlePayment = () => {
-    setShowModal(true); // Mostrar el modal al hacer clic en "Pagar"
+  const handlePayment = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/api/pedidos", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          items: cart.map((item) => ({
+            titulo: item.titulo,
+            cantidad: item.quantity,
+            precioUnitario: item.precio,
+          })),
+          total: total,
+          fecha: new Date().toISOString()
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Error al registrar el pedido");
+      }
+
+      setShowModal(true); //lo dejo?
+    } catch (error) {
+      console.error("Error al realizar el pago:", error);
+      alert("Hubo un problema al procesar el pago. Inténtelo de nuevo.");
+    }
   };
 
   const handleCancel = () => {

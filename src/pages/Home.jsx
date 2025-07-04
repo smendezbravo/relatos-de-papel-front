@@ -14,7 +14,7 @@ export default function Home() {
   useEffect(() => {
     const fetchLibros = async () => {
       try {
-        const response = await fetch("http://localhost:8762/api/libros");
+        const response = await fetch("http://192.168.112.1:8762/api/libros");
         const data = await response.json();
         setLibros(data);
       } catch (error) {
